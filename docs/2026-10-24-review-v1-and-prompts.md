@@ -13,7 +13,7 @@ for: Ahmed (Lovable), Anton (data)
 | # | Where | Issue | Fix |
 |---|---|---|---|
 | 1 | Home, gap bonus box | Text repeats: "Your chapter needs this. Your chapter needs this · ×1.5 XP" | One line: "Your chapter needs this · ×1.5 XP" |
-| 2 | Browser tab title | "Jaybird" | App = "Jam", mascot = "Jay" |
+| 2 | Browser tab title | OK: "Jaybird" (name kept) | Mascot = "Jay" |
 | 3 | Ranks | Only top 3 podium; no list, no "you" row | Podium + list 4-10 + sticky "you" row |
 | 4 | Me, badges | Grey star placeholders | Icons (prompt P5) |
 | 5 | Home | Personal asks (spec F3) not visible | Inbox card above "one task": "Kadri asked you" |
@@ -36,7 +36,7 @@ Credits tip: send the whole prompt once, fix small text in GitHub, not in chat.
 ```
 Small fixes, no layout changes:
 1. Home gap bonus box: show one line only: "Your chapter needs this · ×1.5 XP".
-2. Rename the app to "Jam" everywhere (page titles, meta). The mascot is called "Jay".
+2. The app is called "Jaybird". The mascot is called "Jay".
 3. Ranks: under the top-3 podium, add a list for places 4-10 (rank, avatar, name, chapter, XP). If the current user is not in the top 10, show a sticky highlighted "You" row at the bottom with their real rank.
 ```
 

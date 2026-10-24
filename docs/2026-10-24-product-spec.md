@@ -1,7 +1,7 @@
-# Jam product spec
+# Jaybird product spec
 
 status: hackathon demo, 2026-10-24
-name: platform = Jam (for today; jam.dev is an existing task tool, recheck after hackathon). Mascot = Jay.
+name: platform = Jaybird (decided 2026-10-24, replaces Jam). Mascot = Jay.
 one-line: JCI members get one task that fits their time and skills, asked personally, and earn XP and badges for it.
 
 ## 1. Problems (with proof)
@@ -98,6 +98,12 @@ Verified via Perplexity 2026-10-24 (LinkedIn Help + Microsoft Learn docs).
 - d3-force graph: members, senators, projects; buddy / mentor / project / friend links; filters; click to focus.
 Prompts + data needs: `2026-10-24-review-v1-and-prompts.md`.
 
+### F14 Home feed ("what's hot")
+- Home = engaging feed, not a task list. Order: personal asks → one task today → hot projects → best XP per minute → sponsors looking for help → chapter news (kudos) → "30 XP to pass Laura".
+- Return coefficient = XP ÷ minutes. Shown as "2.7 XP/min".
+- Prompt P6 + design rules: `DESIGN.md`, `2026-10-24-home-feed-prompt.md`.
+- Data (Anton): sponsors (id, name, logo_url, ask, reward, chapter_id), news (id, chapter_id, type, member_id, project_id, text, created_at), kudos (news_id, member_id).
+
 ## 4. Data model (draft; Anton owns the schema)
 | Table | Fields |
 |---|---|
@@ -144,3 +150,4 @@ Seed: 3 chapters in 2 countries, ~15 members, 2 projects, ~10 tasks with mixed t
 - 2026-10-24 Matīss: name = Jam for today, mascot = Jay. Added F9 LinkedIn import.
 - 2026-10-24 Matīss: F9 LinkedIn import verified; PDF upload = demo path.
 - 2026-10-24 Matīss: v1 reviewed. Added F10 people, F11 notifications, F12 projects + gallery, F13 network view.
+- 2026-10-24 Matīss: name back to Jaybird. Added F14 home feed + DESIGN.md.

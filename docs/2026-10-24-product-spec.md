@@ -88,18 +88,31 @@ Verified via Perplexity 2026-10-24 (LinkedIn Help + Microsoft Learn docs).
 - Shown on profile: "Recommended by X for Y". Extracted skills feed F5 matching.
 - Demo: seed data (Elza: 2 imported recommendations + skills) + "Upload LinkedIn PDF" button.
 
+### F10 Members directory + friends
+- People page: member cards, filters (chapter, country, project, role, skill), search. Follow → "My friends".
+### F11 Notifications
+- Bell: buddy/friend posted a task, personal ask, task approved, badge earned.
+### F12 Projects + gallery
+- Projects page with cover image, progress, team. Closed project → photo gallery.
+### F13 Network view
+- d3-force graph: members, senators, projects; buddy / mentor / project / friend links; filters; click to focus.
+Prompts + data needs: `2026-10-24-review-v1-and-prompts.md`.
+
 ## 4. Data model (draft; Anton owns the schema)
 | Table | Fields |
 |---|---|
 | chapters | id, name, country |
 | members | id, name, chapter_id, role, is_senator, is_new, skills[], interests[], available_time, linkedin_url |
 | recommendations | id, member_id, author_name, author_title, text, source (linkedin) |
-| projects | id, name, chapter_id, lead_id |
+| projects | id, name, chapter_id, lead_id, cover_url, status (active/closed) |
 | tasks | id, project_id, title, category (project/ops/social/recruiting), tags[], time_tag (15m/1h/half_day), xp, status (open/asked/in_progress/review/done), assignee_id, verifier_id, due_date |
 | asks | id, task_id, member_id, asked_by, status (pending/accepted/declined), asked_at, answered_at |
 | xp_ledger | id, member_id, task_id, xp, reason, created_at |
 | badges | id, code, name |
 | member_badges | member_id, badge_id, earned_at |
+| follows | follower_id, followee_id |
+| notifications | id, member_id, type, payload jsonb, read_at, created_at |
+| project_photos | id, project_id, url, caption |
 | buddies | new_member_id, buddy_id |
 | mentors | senator_id, member_id |
 
@@ -130,3 +143,4 @@ Seed: 3 chapters in 2 countries, ~15 members, 2 projects, ~10 tasks with mixed t
 - 2026-10-24 Matīss: first version. Added F3 personal ask, F4 time-fit tasks, problems P1 to P4 from polls and team.
 - 2026-10-24 Matīss: name = Jam for today, mascot = Jay. Added F9 LinkedIn import.
 - 2026-10-24 Matīss: F9 LinkedIn import verified; PDF upload = demo path.
+- 2026-10-24 Matīss: v1 reviewed. Added F10 people, F11 notifications, F12 projects + gallery, F13 network view.

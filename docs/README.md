@@ -1,4 +1,4 @@
-# Jaybird docs
+# Jam docs
 
 Shared product decisions for the team. Read before you build. New idea from the team → it lands here.
 

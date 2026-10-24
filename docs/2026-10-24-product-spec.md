@@ -1,6 +1,7 @@
-# Jaybird product spec
+# Jam product spec
 
 status: hackathon demo, 2026-10-24
+name: platform = Jam (for today; jam.dev is an existing task tool, recheck after hackathon). Mascot = Jay.
 one-line: JCI members get one task that fits their time and skills, asked personally, and earn XP and badges for it.
 
 ## 1. Problems (with proof)
@@ -74,13 +75,21 @@ one-line: JCI members get one task that fits their time and skills, asked person
 - Always show "you" row even outside top 5.
 
 ### F8 Mascot
-- Jaybird (teal/yellow jay). Cheers, nudges, celebrates. Design: Julija.
+- Jay (teal/yellow jay). Cheers, nudges, celebrates. Design: Julija.
+
+### F9 LinkedIn import (nice to have)
+- Member links LinkedIn: profile URL on profile; "Import" fills skills, experience, recommendations.
+- Legal path: member uploads own LinkedIn data export (Settings > Data privacy > Get a copy of your data: Skills, Positions, Recommendations_Received CSVs) or profile "Save to PDF". AI extracts skills + tags.
+- Not allowed: scraping other people's profiles (LinkedIn ToS). "Sign in with LinkedIn" gives only name, email, photo.
+- Use: recommendations shown on profile ("Recommended by X for Y"); extracted skills feed F5 matching.
+- Demo: fake it with seed data (Elza's profile shows 2 imported recommendations + skills). Feasibility facts unverified: Perplexity check pending.
 
 ## 4. Data model (draft; Anton owns the schema)
 | Table | Fields |
 |---|---|
 | chapters | id, name, country |
-| members | id, name, chapter_id, role, is_senator, is_new, skills[], interests[], available_time |
+| members | id, name, chapter_id, role, is_senator, is_new, skills[], interests[], available_time, linkedin_url |
+| recommendations | id, member_id, author_name, author_title, text, source (linkedin) |
 | projects | id, name, chapter_id, lead_id |
 | tasks | id, project_id, title, category (project/ops/social/recruiting), tags[], time_tag (15m/1h/half_day), xp, status (open/asked/in_progress/review/done), assignee_id, verifier_id, due_date |
 | asks | id, task_id, member_id, asked_by, status (pending/accepted/declined), asked_at, answered_at |
@@ -110,9 +119,10 @@ Seed: 3 chapters in 2 countries, ~15 members, 2 projects, ~10 tasks with mixed t
 | Backend | Our own Supabase, not Lovable Cloud |
 
 ## 7. Open
-- Product name (Jaybird = working name)
 - Pitch length + judging criteria
 - Can Lovable sync into this repo? (Perplexity check pending)
+- LinkedIn import feasibility (Perplexity check pending)
 
 ## Changelog
 - 2026-10-24 Matīss: first version. Added F3 personal ask, F4 time-fit tasks, problems P1 to P4 from polls and team.
+- 2026-10-24 Matīss: name = Jam for today, mascot = Jay. Added F9 LinkedIn import.

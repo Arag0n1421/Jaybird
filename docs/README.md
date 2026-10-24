@@ -8,6 +8,7 @@ Shared product decisions for the team. Read before you build. New idea from the 
 | `2026-10-24-poll-results.md` | JCI member poll results (pitch proof) |
 | `2026-10-24-review-v1-and-prompts.md` | Review of Lovable v1 + paste-ready prompts P0-P5 |
 | `2026-10-24-home-feed-prompt.md` | Prompt P6: engaging home feed |
+| `2026-10-24-ahmed-agent-brief.md` | One brief for Ahmed's agent: DB migration + all screens in order |
 | `DESIGN.md` | Look-and-feel rules. Paste into every Lovable project's Knowledge |
 
 ## Team

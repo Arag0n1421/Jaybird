@@ -123,7 +123,7 @@ Members give badges to each other. The higher you climb in JCI, the higher-value
 - Top bar: language button (EN / LV, list ready for more). Demo: EN works, LV shows "Coming soon" toast or translates top nav only.
 - Later: full i18n (all UI strings in translation files).
 
-## 4. Data model (draft; Anton owns the schema)
+## 4. Data model (draft; schema owners: Anton + Ahmed, one migrates at a time)
 | Table | Fields |
 |---|---|
 | chapters | id, name, country |
@@ -133,11 +133,15 @@ Members give badges to each other. The higher you climb in JCI, the higher-value
 | tasks | id, project_id, title, category (project/ops/social/recruiting), tags[], time_tag (15m/1h/half_day), xp, status (open/asked/in_progress/review/done), assignee_id, verifier_id, due_date |
 | asks | id, task_id, member_id, asked_by, status (pending/accepted/declined), asked_at, answered_at |
 | xp_ledger | id, member_id, task_id, xp, reason, created_at |
-| badges | id, code, name |
+| badges | id, code, name, icon (lucide name), tier (bronze/silver/gold/platinum, peer only), kind (earned/peer) |
+| peer_badges | id, giver_id, receiver_id, badge_id, note, season, created_at |
 | member_badges | member_id, badge_id, earned_at |
 | follows | follower_id, followee_id |
 | notifications | id, member_id, type, payload jsonb, read_at, created_at |
 | project_photos | id, project_id, url, caption |
+| supporters | id, name, type (sponsor/supporting_member/partner), logo_url, ask, reward, chapter_id, url |
+| news | id, chapter_id, type, member_id, project_id, text, image_urls[], created_at |
+| kudos | news_id, member_id |
 | buddies | new_member_id, buddy_id |
 | mentors | senator_id, member_id |
 

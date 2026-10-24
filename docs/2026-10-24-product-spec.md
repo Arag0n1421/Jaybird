@@ -78,11 +78,15 @@ one-line: JCI members get one task that fits their time and skills, asked person
 - Jay (teal/yellow jay). Cheers, nudges, celebrates. Design: Julija.
 
 ### F9 LinkedIn import (nice to have)
-- Member links LinkedIn: profile URL on profile; "Import" fills skills, experience, recommendations.
-- Legal path: member uploads own LinkedIn data export (Settings > Data privacy > Get a copy of your data: Skills, Positions, Recommendations_Received CSVs) or profile "Save to PDF". AI extracts skills + tags.
-- Not allowed: scraping other people's profiles (LinkedIn ToS). "Sign in with LinkedIn" gives only name, email, photo.
-- Use: recommendations shown on profile ("Recommended by X for Y"); extracted skills feed F5 matching.
-- Demo: fake it with seed data (Elza's profile shows 2 imported recommendations + skills). Feasibility facts unverified: Perplexity check pending.
+Verified via Perplexity 2026-10-24 (LinkedIn Help + Microsoft Learn docs).
+| Path | Gives | Limits | Use |
+|---|---|---|---|
+| Sign in with LinkedIn (OIDC: `openid profile email`) | Name, photo, email, locale | No skills, no recommendations, no work history | Login + avatar |
+| Profile "Save to PDF" | Profile incl. recommendations received (full text), skill names | Desktop only; English profile only; no endorsement counts | Fastest import: member uploads PDF, AI extracts |
+| Own data export (Settings > Data privacy > Get a copy of your data) | Skills, Positions, Recommendations Received/Given (CSV) | Selected categories: minutes; full archive: 24 h; link valid 72 h | Most precise import |
+- Not allowed: scraping, or reading other members' profiles. Richer API = LinkedIn partner program only.
+- Shown on profile: "Recommended by X for Y". Extracted skills feed F5 matching.
+- Demo: seed data (Elza: 2 imported recommendations + skills) + "Upload LinkedIn PDF" button.
 
 ## 4. Data model (draft; Anton owns the schema)
 | Table | Fields |
@@ -121,8 +125,8 @@ Seed: 3 chapters in 2 countries, ~15 members, 2 projects, ~10 tasks with mixed t
 ## 7. Open
 - Pitch length + judging criteria
 - Can Lovable sync into this repo? (Perplexity check pending)
-- LinkedIn import feasibility (Perplexity check pending)
 
 ## Changelog
 - 2026-10-24 Matīss: first version. Added F3 personal ask, F4 time-fit tasks, problems P1 to P4 from polls and team.
 - 2026-10-24 Matīss: name = Jam for today, mascot = Jay. Added F9 LinkedIn import.
+- 2026-10-24 Matīss: F9 LinkedIn import verified; PDF upload = demo path.

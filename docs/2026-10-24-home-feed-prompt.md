@@ -11,7 +11,7 @@ Top to bottom:
 3. Your one task today: keep current card, slightly more compact.
 4. "Hot projects" : horizontal scroll of 4-6 project cards with large cover photo, name, chapter, momentum line ("+5 joined this week", "8 tasks done"), progress bar, avatar stack. Sorted by activity in the last 7 days. Click opens project.
 5. "Best XP per minute": 3-5 open tasks ranked by XP ÷ minutes. Each row: title, project, time tag, XP, and a yellow pill "2.7 XP/min". Button "Take it".
-6. "Sponsors looking for help": 2-3 sponsor cards with logo, what they need ("Volunteers for our run, 12 Nov"), reward ("EUR 200 to the prize pool" or "+150 XP"), button "I'm in".
+6. "Our supporters": 2-3 cards with logo and a type label: Sponsor / Supporting member / Partner (e.g. BNI). Each shows what they need or offer ("Volunteers for our run, 12 Nov", "BNI breakfast: 2 guest seats for members"), reward if any ("EUR 200 to the prize pool" or "+150 XP"), button "I'm in". Below: a thin logo strip "Partners: BNI, ...".
 7. "Chapter news": Strava-style feed. Items: "{name} earned the Spark badge", "{project} closed: 24 photos" (with 3 photo thumbnails), "Welcome {new member}, buddy: {name}", "{name} passed {name} on the chapter board". Each item has a kudos button (clap icon + count) and time ago.
 8. Bottom nudge card: "30 XP to pass Laura. One 15-min task does it." with button.
 
@@ -35,4 +35,10 @@ UI:
 4. Me page: "Your giving power" card with current tier, next tier and what unlocks it.
 Rules: cannot give to yourself; one badge per giver per receiver per season; giver gets +5 XP.
 Add a notification and a chapter news item when a badge is given.
+```
+
+# P8 Language button
+
+```
+Add a language button in the top bar (globe icon + "EN"). Dropdown: English, Latviešu, plus greyed "More soon". English works. Choosing Latviešu translates the left nav labels only and shows a small toast "Full Latvian coming soon". No other changes.
 ```

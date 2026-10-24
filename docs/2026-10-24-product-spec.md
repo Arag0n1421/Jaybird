@@ -99,10 +99,10 @@ Verified via Perplexity 2026-10-24 (LinkedIn Help + Microsoft Learn docs).
 Prompts + data needs: `2026-10-24-review-v1-and-prompts.md`.
 
 ### F14 Home feed ("what's hot")
-- Home = engaging feed, not a task list. Order: personal asks → one task today → hot projects → best XP per minute → sponsors looking for help → chapter news (kudos) → "30 XP to pass Laura".
+- Home = engaging feed, not a task list. Order: personal asks → one task today → hot projects → best XP per minute → supporters (sponsors, supporting members, partners such as BNI) → chapter news (kudos) → "30 XP to pass Laura".
 - Return coefficient = XP ÷ minutes. Shown as "2.7 XP/min".
 - Prompt P6 + design rules: `DESIGN.md`, `2026-10-24-home-feed-prompt.md`.
-- Data (Anton): sponsors (id, name, logo_url, ask, reward, chapter_id), news (id, chapter_id, type, member_id, project_id, text, created_at), kudos (news_id, member_id).
+- Data (Anton): supporters (id, name, type (sponsor/supporting_member/partner), logo_url, ask, reward, chapter_id, url), news (id, chapter_id, type, member_id, project_id, text, created_at), kudos (news_id, member_id).
 
 ### F15 Peer badges by career tier
 Members give badges to each other. The higher you climb in JCI, the higher-value badges you can give. Scarcity gives value: limited per season.
@@ -118,6 +118,10 @@ Members give badges to each other. The higher you climb in JCI, the higher-value
 - Notification to receiver; item in chapter news.
 - Prompt: P7 in `2026-10-24-home-feed-prompt.md`.
 - Data (Anton): badges.tier (bronze/silver/gold/platinum), badges.kind (earned/peer), peer_badges (id, giver_id, receiver_id, badge_id, note, season, created_at). Check tier + season limit in a trigger or RPC.
+
+### F16 Language switcher (demo: button only)
+- Top bar: language button (EN / LV, list ready for more). Demo: EN works, LV shows "Coming soon" toast or translates top nav only.
+- Later: full i18n (all UI strings in translation files).
 
 ## 4. Data model (draft; Anton owns the schema)
 | Table | Fields |
@@ -160,6 +164,15 @@ Seed: 3 chapters in 2 countries, ~15 members, 2 projects, ~10 tasks with mixed t
 - Pitch length + judging criteria
 - Can Lovable sync into this repo? (Perplexity check pending)
 
+## 8. Future (not in demo)
+| Item | Note |
+|---|---|
+| Membership payment | Yearly fee EUR 100. Stripe Checkout (subscription, yearly) + webhook sets members.paid_until. Supporting members: separate price. Card data never in our DB |
+| Full translation | LV + EN first, then any JCI country language |
+| Partner offers | Partners (BNI etc.) post offers or events for members |
+| Privacy / GDPR | Consent, data export, delete account |
+| Lock down Supabase | Replace demo "all" RLS policies |
+
 ## Changelog
 - 2026-10-24 Matīss: first version. Added F3 personal ask, F4 time-fit tasks, problems P1 to P4 from polls and team.
 - 2026-10-24 Matīss: name = Jam for today, mascot = Jay. Added F9 LinkedIn import.
@@ -167,3 +180,4 @@ Seed: 3 chapters in 2 countries, ~15 members, 2 projects, ~10 tasks with mixed t
 - 2026-10-24 Matīss: v1 reviewed. Added F10 people, F11 notifications, F12 projects + gallery, F13 network view.
 - 2026-10-24 Matīss: name back to Jaybird. Added F14 home feed + DESIGN.md.
 - 2026-10-24 Matīss: F15 peer badges by career tier.
+- 2026-10-24 Matīss: supporters = sponsors + supporting members + partners (BNI). F16 language button. Section 8 future: Stripe membership EUR 100/yr, i18n.

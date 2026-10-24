@@ -1,0 +1,192 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Jaybird design system — JCI Brand Guidelines v1.2. Light theme only. */
+
+@theme inline {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-quote: "Arvo", Georgia, serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  /* JCI brand */
+  --color-jci-blue: var(--jci-blue);
+  --color-jci-blue-75: color-mix(in oklab, var(--jci-blue) 75%, white);
+  --color-jci-blue-50: color-mix(in oklab, var(--jci-blue) 50%, white);
+  --color-jci-blue-25: color-mix(in oklab, var(--jci-blue) 25%, white);
+  --color-jci-black: var(--jci-black);
+  --color-jci-black-75: color-mix(in oklab, var(--jci-black) 75%, white);
+  --color-jci-black-50: color-mix(in oklab, var(--jci-black) 50%, white);
+  --color-jci-black-25: color-mix(in oklab, var(--jci-black) 25%, white);
+  --color-jci-white: var(--jci-white);
+  --color-jci-navy: var(--jci-navy);
+  --color-jci-navy-75: color-mix(in oklab, var(--jci-navy) 75%, white);
+  --color-jci-navy-50: color-mix(in oklab, var(--jci-navy) 50%, white);
+  --color-jci-navy-25: color-mix(in oklab, var(--jci-navy) 25%, white);
+  --color-jci-teal: var(--jci-teal);
+  --color-jci-teal-75: color-mix(in oklab, var(--jci-teal) 75%, white);
+  --color-jci-teal-50: color-mix(in oklab, var(--jci-teal) 50%, white);
+  --color-jci-teal-25: color-mix(in oklab, var(--jci-teal) 25%, white);
+  --color-jci-yellow: var(--jci-yellow);
+  --color-jci-yellow-75: color-mix(in oklab, var(--jci-yellow) 75%, white);
+  --color-jci-yellow-50: color-mix(in oklab, var(--jci-yellow) 50%, white);
+  --color-jci-yellow-25: color-mix(in oklab, var(--jci-yellow) 25%, white);
+  --color-surface: var(--surface);
+  --color-coral: var(--coral);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--jci-blue);
+  --color-chart-2: var(--jci-teal);
+  --color-chart-3: var(--jci-navy);
+  --color-chart-4: var(--jci-yellow);
+  --color-chart-5: var(--jci-black);
+  --color-sidebar: var(--background);
+  --color-sidebar-foreground: var(--foreground);
+  --color-sidebar-primary: var(--primary);
+  --color-sidebar-primary-foreground: var(--primary-foreground);
+  --color-sidebar-accent: var(--surface);
+  --color-sidebar-accent-foreground: var(--foreground);
+  --color-sidebar-border: var(--border);
+  --color-sidebar-ring: var(--ring);
+}
+
+:root {
+  --radius: 0.75rem; /* 12px cards */
+
+  --jci-blue: #2B8585; /* teal, darkened from #57BCBC for readable links and selected states */
+  --jci-black: #0A0818; /* navy */
+  --jci-white: oklch(1 0 0);
+  --jci-navy: #0A0818;
+  --jci-teal: #57BCBC;
+  --coral: #FF7A6B;
+  --jci-yellow: oklch(0.834 0.169 92.6); /* #EFC40F */
+  --surface: #F7F7F9; /* off-white */
+
+  --background: var(--jci-white);
+  --foreground: var(--jci-black);
+  --card: var(--jci-white);
+  --card-foreground: var(--jci-black);
+  --popover: var(--jci-white);
+  --popover-foreground: var(--jci-black);
+  --primary: var(--jci-blue);
+  --primary-foreground: var(--jci-white);
+  --secondary: var(--surface);
+  --secondary-foreground: var(--jci-black);
+  --muted: var(--surface);
+  --muted-foreground: color-mix(in oklab, var(--jci-black) 62%, white);
+  --accent: var(--surface);
+  --accent-foreground: var(--jci-black);
+  --destructive: oklch(0.577 0.2 27);
+  --destructive-foreground: var(--jci-white);
+  --border: oklch(0.929 0.011 256.7); /* #E3E8EF */
+  --input: oklch(0.929 0.011 256.7);
+  --ring: var(--jci-blue);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    font-family: var(--font-sans);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 400;
+    overflow-x: hidden;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Brand type scale */
+@utility text-title {
+  font-size: 1.75rem;
+  line-height: 1.2;
+  font-weight: 700;
+  @media (min-width: 768px) {
+    font-size: 2.25rem;
+  }
+}
+@utility text-subtitle {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  font-weight: 700;
+}
+@utility text-subheading {
+  font-size: 1.125rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+@utility text-body {
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 400;
+}
+@utility text-quote {
+  font-family: var(--font-quote);
+  font-size: 1.75rem;
+  line-height: 1.3;
+}
+
+/* Flat navy anchor block (one per screen) */
+@utility ripple {
+  background-color: var(--jci-navy);
+  color: var(--jci-white);
+}
+
+@keyframes jb-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+@keyframes jb-hop {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  30% { transform: translateY(-10px) rotate(-6deg); }
+  60% { transform: translateY(0) rotate(4deg); }
+}
+@keyframes jb-tilt {
+  0%, 100% { transform: rotate(0); }
+  50% { transform: rotate(-8deg); }
+}
+@utility animate-bob { animation: jb-bob 2.4s ease-in-out infinite; }
+@utility animate-hop { animation: jb-hop 0.9s ease-in-out infinite; }
+@utility animate-tilt { animation: jb-tilt 1.6s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-bob, .animate-hop, .animate-tilt { animation: none !important; }
+}
+
+@utility text-number {
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}

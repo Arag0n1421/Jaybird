@@ -104,6 +104,21 @@ Prompts + data needs: `2026-10-24-review-v1-and-prompts.md`.
 - Prompt P6 + design rules: `DESIGN.md`, `2026-10-24-home-feed-prompt.md`.
 - Data (Anton): sponsors (id, name, logo_url, ask, reward, chapter_id), news (id, chapter_id, type, member_id, project_id, text, created_at), kudos (news_id, member_id).
 
+### F15 Peer badges by career tier
+Members give badges to each other. The higher you climb in JCI, the higher-value badges you can give. Scarcity gives value: limited per season.
+| Giver tier | Unlocks at | Can give | Per season | XP to receiver |
+|---|---|---|---|---|
+| Bronze | Level 3 | "Thanks for the help", "Team player" | 5 | +20 |
+| Silver | Level 6 or project lead with 1 closed project | "Problem solver", "Leader in action" | 3 | +60 |
+| Gold | Local board / local president | "Outstanding contribution" | 2 | +150 |
+| Platinum | Senator or national board | "Senator's choice" | 1 | +300 |
+- Each peer badge carries a short note ("for running the registration desk alone"). Shown on the receiver's profile with giver name + tier.
+- Rules: not to yourself; same giver → same receiver once per season; giver also gets +5 XP (recognition is a skill).
+- Profile shows giver tier + badges left this season ("2 gold left").
+- Notification to receiver; item in chapter news.
+- Prompt: P7 in `2026-10-24-home-feed-prompt.md`.
+- Data (Anton): badges.tier (bronze/silver/gold/platinum), badges.kind (earned/peer), peer_badges (id, giver_id, receiver_id, badge_id, note, season, created_at). Check tier + season limit in a trigger or RPC.
+
 ## 4. Data model (draft; Anton owns the schema)
 | Table | Fields |
 |---|---|
@@ -151,3 +166,4 @@ Seed: 3 chapters in 2 countries, ~15 members, 2 projects, ~10 tasks with mixed t
 - 2026-10-24 Matīss: F9 LinkedIn import verified; PDF upload = demo path.
 - 2026-10-24 Matīss: v1 reviewed. Added F10 people, F11 notifications, F12 projects + gallery, F13 network view.
 - 2026-10-24 Matīss: name back to Jaybird. Added F14 home feed + DESIGN.md.
+- 2026-10-24 Matīss: F15 peer badges by career tier.

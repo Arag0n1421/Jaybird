@@ -18,3 +18,21 @@ Top to bottom:
 Layout: desktop = main column (sections 2-5, 7) + right rail (section 6 sponsors, section 8 nudge, mini leaderboard top 5). Mobile = single column in the order above.
 Animations: cards stagger in on load, kudos button pops on click, XP pill shimmer once on enter.
 ```
+
+# P7 Peer badges by career tier
+
+```
+Add peer badges: members give badges to each other. Follow DESIGN.md.
+Tiers (giver's level/role decides what they can give, limited per season):
+- Bronze (level 3+): "Thanks for the help", "Team player". 5 per season. +20 XP to receiver.
+- Silver (level 6+ or project lead with a closed project): "Problem solver", "Leader in action". 3 per season. +60 XP.
+- Gold (local board or local president): "Outstanding contribution". 2 per season. +150 XP.
+- Platinum (senator or national board): "Senator's choice". 1 per season. +300 XP.
+UI:
+1. On any member profile: button "Give a badge". Opens a sheet showing the badges the viewer can give, locked ones greyed with "Unlocks at level 6", and "badges left this season".
+2. Pick badge, write a short note (required, max 140 chars), send. Badge flies onto the profile with a pop animation; Jay: "You made {name}'s day."
+3. Receiver profile: "Recognized by" section, each badge with tier color (bronze #C08A5A, silver #B8C0CC, gold #EFC40F, platinum #57BCBC), note, giver avatar + name.
+4. Me page: "Your giving power" card with current tier, next tier and what unlocks it.
+Rules: cannot give to yourself; one badge per giver per receiver per season; giver gets +5 XP.
+Add a notification and a chapter news item when a badge is given.
+```

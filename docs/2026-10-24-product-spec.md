@@ -9,7 +9,7 @@ one-line: JCI members get one task that fits their time and skills, asked person
 |---|---|---|
 | P1 | Members have no time and don't know what tasks exist | Poll Q1: "No time" 8, "Don't know tasks" 6 (top 2 of 19 votes) |
 | P2 | Tasks, projects and people get lost in WhatsApp chats | Julija; every member's experience |
-| P3 | A task sent to everyone gets done by no one (bystander effect). A personal ask gets a reply | Poll Q3: 13 of 13 lead votes say finding people is hard |
+| P3 | A task sent to everyone gets done by no one (bystander effect). A personal ask gets a reply | Poll Q3: 24 of 26 lead votes say finding people is hard (final, LV + EU) |
 | P4 | Volunteers are not employees: you can't assign work, you have to find the right person | Senator Uģis Krūmiņš: "the biggest challenge is to manage people who are not formally subordinate" |
 
 ## 2. Users
